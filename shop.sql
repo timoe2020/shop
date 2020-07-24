@@ -1,3 +1,4 @@
+-- 建表
 create table userdata(
     id int unsigned not null auto_increment,
     username 	varchar(50) not null,
@@ -60,3 +61,7 @@ create table commit(
     shop_id int not null,
     primary key(id)
 );
+-- userdata中插入用户数据
+INSERT INTO `userdata` (`id`, `username`, `password`, `regtime`, `admin`) VALUES (NULL, 'user1', '123', UNIX_TIMESTAMP(), '0'), (NULL, 'user2', '123', UNIX_TIMESTAMP(), '0');
+INSERT INTO `userdata` (`id`, `username`, `password`, `regtime`, `admin`) VALUES (NULL, 'user3', '123', UNIX_TIMESTAMP(), '0'), (NULL, 'user4', '123', UNIX_TIMESTAMP(), '0');
+INSERT INTO `userdata` (`id`, `username`, `password`, `regtime`, `admin`) VALUES (NULL, 'user5', '123', UNIX_TIMESTAMP(), '0'), (NULL, 'admin', '123', UNIX_TIMESTAMP(), '1');
