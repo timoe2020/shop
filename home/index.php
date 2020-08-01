@@ -114,11 +114,11 @@
                     {
                     ?>
                 <div class="shopInfo">
-<!--                    --><?php
+                    --><?php
                         echo "<a href='shopinfo.php?id={$RowShop['id']}' target='_blank'>";
                         echo $RowShop['name'];
                         echo "</a>";
-//                    ?>
+                  ?>
                 </div>
 
                 <?php
