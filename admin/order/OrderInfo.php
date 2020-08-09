@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
 
 
         echo "<tr>";
-//        echo"<td>{$rowOrder["id"]}</td>";
+
         echo"<td><a href='OrderInfo.php?code={$rowOrder['code']}'>{$rowOrder["code"]}</a></td>";
         echo"<td>{$rowOrder["user_id"]}</td>";
         if($UserRow = mysqli_fetch_array($UserRes))
