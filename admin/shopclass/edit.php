@@ -1,11 +1,8 @@
 <?php
+include '../public/common/acl.inc.php';
 include'../../public/common/dbconfig.inc.php';
-$id=$_GET['id'];
+header("Content-Type: text/html;charset=utf-8");
 
-$sqlUser = "SELECT * FROM shopclass WHERE id='$id'";
-
-$result = $conn->query($sqlUser);
-$row = mysqli_fetch_array($result);
 
 ?>
 
@@ -19,11 +16,23 @@ $row = mysqli_fetch_array($result);
     <title>修改商品分类</title>
 </head>
 <body>
+<header>
+    <?php
+    include '../index.php';
+    $id=$_GET['id'];
+
+    $sqlUser = "SELECT * FROM shopclass WHERE id='$id'";
+
+    $result = $conn->query($sqlUser);
+    $row = mysqli_fetch_array($result);
+    ?>
+</header>
+<main>
 <p><b>修改商品分类：</b></p>
 <form action="update.php" method="post" target="_self">
     <table border="1px" cellspacing="0">
         <tr>
-            <td>用户名：</td>
+            <td>类名：</td>
             <td>
                 <label>
                     <input type="text" name="name" value="<?php echo $row['name']?>">
@@ -38,11 +47,10 @@ $row = mysqli_fetch_array($result);
                 <input type="reset" value="重置">
             </td>
         </tr>
-        <tr>
-            <a href="../index.php">返回管理系统主界面</a>
-        </tr>
+
     </table>
 </form>
+</main>
 </body>
 </html>
 
