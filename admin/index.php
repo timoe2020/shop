@@ -27,7 +27,7 @@ header("Content-Type: text/html;charset=utf-8");
 
                 <li class="describe">
                     您好,<span><?php echo $_SESSION['username']?></span>
-                    <a href="login/logout.php">[登出]</a>
+                    <a href="/shop/admin/login/logout.php">[登出]</a>
                 </li>
                 <li class="function manage">
                     <a href="#" >用户管理</a>
