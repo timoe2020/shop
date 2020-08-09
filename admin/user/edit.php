@@ -1,11 +1,8 @@
 <?php
+include '../public/common/acl.inc.php';
 include'../../public/common/dbconfig.inc.php';
-$id=$_GET['id'];
+header("Content-Type: text/html;charset=utf-8");
 
-$sqlUser = "SELECT * FROM userdata WHERE id='$id'";
-
-$result = $conn->query($sqlUser);
-$row = mysqli_fetch_array($result);
 //while($row = mysqli_fetch_array($result))
 //{
 //    echo $row['username'],$row['password'];
@@ -24,6 +21,18 @@ $row = mysqli_fetch_array($result);
     <title>修改用户</title>
 </head>
 <body>
+<header>
+    <?php
+    include'../index.php';
+    $id=$_GET['id'];
+
+    $sqlUser = "SELECT * FROM userdata WHERE id='$id'";
+
+    $result = $conn->query($sqlUser);
+    $row = mysqli_fetch_array($result);
+    ?>
+</header>
+<main>
 <p><b>修改用户：</b></p>
 <form action="update.php" method="post">
     <table border="1px" cellspacing="0">
@@ -70,13 +79,15 @@ $row = mysqli_fetch_array($result);
             <input type="hidden" name="id" value="<?php echo $row['id']?>">
             <td>
                 <input type="submit" value="提交">
+
+            </td>
+            <td>
                 <input type="reset" value="重置">
             </td>
         </tr>
-        <tr>
-            <a href="../index.php">返回管理系统主界面</a>
-        </tr>
+
     </table>
 </form>
+</main>
 </body>
 </html>
