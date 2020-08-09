@@ -7,7 +7,7 @@
     float: left;
     width: 349px;
     height: 66px;
-    margin: 15px 506px 10px 54px;
+    margin: 15px 306px 10px 54px;
 
 }
 #title{
@@ -24,7 +24,7 @@
 }
 #sidebar{
     position: relative;
-    height: 805px;
+    height: 624px;
     width: 250px;
     background: #E6F0EA;
 }
@@ -48,9 +48,12 @@
 .describe{
     background: #B2DDFC;
 }
+.describe a:hover{
+    color: #ee7345;
+}
 #menu li{
     height: 68px;
-    line-height: 68px;
+    line-height: 58px;
     width: 250px;
     font-size: 16px;
     font-weight: bold;
@@ -174,4 +177,21 @@
     float: right;
     margin-right: 20px;
     color: blue;
+}
+main{
+    font-size: 20px;
+    width: 70%;
+    height:auto;
+    border: dashed lightgray 2px;
+    padding: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 260px;
+    top: 110px;
+}
+main a{
+    color: blue;
+}
+main a:hover{
+    color: orange;
 }
