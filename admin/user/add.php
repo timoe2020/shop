@@ -1,3 +1,7 @@
+<?php
+include '../public/common/acl.inc.php';
+header("Content-Type: text/html;charset=utf-8");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +12,12 @@
     <title>添加用户</title>
 </head>
 <body>
+<header>
+    <?php
+    include'../index.php';
+    ?>
+</header>
+<main>
     <p><b>添加用户：</b></p>
     <form action="insert.php" method="post" target="_self">
         <table border="1px" cellspacing="0">
@@ -38,13 +48,15 @@
             <tr>
                 <td>
                     <input type="submit" value="提交">
+
+                </td>
+                <td>
                     <input type="reset" value="重置">
                 </td>
             </tr>
-            <tr>
-                <a href="../index.php">返回管理系统主界面</a>
-            </tr>
+
         </table>
     </form>
+</main>
 </body>
 </html>
