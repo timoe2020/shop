@@ -15,35 +15,34 @@ header("Content-Type: text/html;charset=utf-8");
 <body>
 <header>
     <?php
-    include'../index.php';
+    include '../index.php';
     ?>
 </header>
 <main>
     <?php
     $name=$_POST['name'];
-    $price=$_POST['price'];
-    $stock=$_POST['stock'];
-    $upshelf=$_POST['upshelf'];
-    $image=$_POST['img'];
-    $brand_id=$_POST['BrandId'];
-    $class_id=$_POST['ClassId'];
 
 
 
-    $sqlShop="INSERT INTO shop (name, price, stock, upshelf, image, brand_id,class_id)
-VALUES ('$name', '$price',' $stock', '$upshelf',' $image', '$brand_id','$class_id')";
-    if($conn->query($sqlShop))
+    $sql="INSERT INTO shopclass (name)
+    VALUES ('$name')";
+
+    if($conn->query($sql))
     {
-        echo "添加成功!<br>";
+        echo "添加成功<br>";
     }
     else{
-        echo "error:".$sqlShop."<br>".$conn->error;
+        echo "error:".$sql."<br>".$conn->error;
     }
+
 
 
 
     ?>
+
 </main>
+
 </body>
 </html>
+
 
