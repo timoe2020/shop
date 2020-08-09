@@ -1,6 +1,8 @@
 <?php
+include '../public/common/acl.inc.php';
 include'../../public/common/dbconfig.inc.php';
-$sqlUser = "SELECT * FROM userdata";
+header("Content-Type: text/html;charset=utf-8");
+$sqlUser = "SELECT * FROM userdata order by id";
 $resultUser = $conn->query($sqlUser);
 
 
@@ -16,6 +18,12 @@ $resultUser = $conn->query($sqlUser);
 
 </head>
 <body>
+<header>
+    <?php
+    include'../index.php';
+    ?>
+</header>
+<main>
     <p><b>查看用户</b></p>
     <table width="500" border="1" cellspacing="0">
         <tr>
@@ -38,15 +46,16 @@ $resultUser = $conn->query($sqlUser);
                 echo"<td>".date("Y-m-d H:i:s",$rowUser["regtime"])."</td>";
                 echo"<td>{$rowUser["admin"]}</td>";
                 echo "<td><a href='edit.php?id={$rowUser["id"]}'>修改</a></td>";
-                echo "<td><a href='delete.php?id={$rowUser["id"]}' target='_blank'>删除</a></td>";
+                echo "<td><a href='delete.php?id={$rowUser["id"]}' >删除</a></td>";
                 echo "</tr>";
             }
         } else {
             echo "0 结果";
         }
-        echo"<a href='../index.php'>返回管理系统主界面</a>"
+
 
         ?>
     </table>
+</main>
 </body>
 </html>
