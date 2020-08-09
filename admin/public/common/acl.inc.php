@@ -1,14 +1,30 @@
 <?php
-header("Content-Type: text/html;charset=utf-8");
+
 session_start();
-if($_SESSION['login']&&$_SESSION['admin'])
-{
-//    echo "登录成功！";
-//    echo "<a href='logout.php'>登出</a>";
-    echo "<br>";
-//    echo "<a href='/shop/admin/index.php'>跳转到管理系统</a>";
+
+header("Content-Type: text/html;charset=utf-8");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "shop";
+
+// 创建连接
+$conn = new mysqli($servername, $username, $password, $dbname);
+// 检测连接
+if ($conn->connect_error) {
+    die("连接失败: " . $conn->connect_error);
 }
-else
+if(!mysqli_set_charset($conn,"utf8")){
+    echo"Error loading character set utf8: %s\n",mysqli_error($conn);
+}
+$username=$_SESSION['username'];
+
+$sql="SELECT * FROM userdata where username='{$username}'";
+$result=$conn->query($sql);
+$row=$result->fetch_assoc();
+//echo $row['username'];
+//echo $row['admin'];
+if(!$_SESSION['login']||!$row['admin'])
 {
     echo "没有权限";
 
