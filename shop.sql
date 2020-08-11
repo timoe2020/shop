@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2020-08-09 12:06:02
+-- 生成日期： 2020-08-11 12:51:38
 -- 服务器版本： 8.0.12
 -- PHP 版本： 7.3.4
 
@@ -69,6 +69,16 @@ INSERT INTO `cart` (`id`, `shop_id`, `user_id`, `order_id`) VALUES
 (150, 10, 11, 0),
 (152, 13, 11, 0),
 (172, 4, 17, 0),
+(184, 9, 21, 0),
+(183, 9, 21, 0),
+(182, 13, 21, 0),
+(181, 9, 21, 0),
+(180, 13, 21, 0),
+(179, 13, 21, 0),
+(178, 13, 21, 0),
+(176, 13, 21, 0),
+(175, 9, 21, 0),
+(177, 13, 21, 0),
 (153, 14, 11, 0),
 (154, 4, 11, 0),
 (155, 3, 11, 0),
@@ -115,7 +125,8 @@ INSERT INTO `commit` (`id`, `content`, `user_id`, `shop_id`, `time`) VALUES
 (12, '哈哈哈', 21, 11, '1596197960'),
 (13, '好好看呐！', 6, 13, '1596198498'),
 (14, ' 太棒了吧', 1, 13, '1596198524'),
-(15, '请友善评论！', 6, 11, '1596852565');
+(15, '请友善评论！', 6, 11, '1596852565'),
+(16, '牛逼！！！！！！！！！1', 21, 9, '1597118424');
 
 -- --------------------------------------------------------
 
@@ -237,7 +248,7 @@ INSERT INTO `relation` (`id`, `realname`, `address`, `telephone`, `email`, `user
 (1, 'John', 'earth', '13232333232', '324242425435@qq.com', 12),
 (2, 'dzh', 'sysu', '1231231', 'dengzh8@mail2.sysu.edu.cn', 21),
 (3, 'ric', 'gku', '13423245647', '2334234@ricardo2001zg.moe', 21),
-(5, 'Sammi Green', 'dgut', '124142344', 'SammiGreen2019@gmail.com', 21),
+(9, 'Sammi Green', 'dgut', '233525', 'sammigreen2020@gmail.com', 21),
 (7, 'dzh', 'sysu', '13631720132', 'dengzh8@mail2.sysu.edu.cn', 11),
 (8, 'tony', 'pku', '13456238923', '72662378@thu.edu.cn', 17);
 
@@ -269,15 +280,15 @@ INSERT INTO `shop` (`id`, `name`, `price`, `stock`, `upshelf`, `image`, `brand_i
 (5, 'R3', 9, 22, 1, ' null', 10, 12),
 (6, 'MacBook Air', 7999, 123, 1, ' null', 1, 12),
 (7, 'macbook Pro 16', 18999, 22, 1, ' null', 1, 12),
-(8, 'iphone4s', 3453, 12, 1, ' null', 1, 1),
-(9, 'iphone6s', 5656, 12, 1, ' null', 1, 1),
+(9, 'iphone4s', 3453, 12, 1, ' null', 1, 1),
+(10, 'iphone6s', 5656, 12, 1, ' null', 1, 1),
 (17, 'R5', 12000, 22, 1, ' null', 10, 12),
 (11, 'phone se', 9999, 22, 1, ' null', 1, 1),
 (12, 'huawei mate30', 4323, 12, 1, ' null', 8, 1),
 (13, 'Red and Black', 9999, 23, 1, 'null', 14, 10),
 (18, 'honor7', 5656, 22, 1, ' null', 8, 1),
 (15, 'phone xsmax', 4323, 12, 1, ' null', 1, 1),
-(16, 'R2', 9999, 212, 1, ' null', 10, 12);
+(14, 'R2', 9999, 212, 1, ' null', 10, 12);
 
 -- --------------------------------------------------------
 
@@ -407,13 +418,13 @@ ALTER TABLE `brand`
 -- 使用表AUTO_INCREMENT `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(50) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `id` int(50) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 
 --
 -- 使用表AUTO_INCREMENT `commit`
 --
 ALTER TABLE `commit`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- 使用表AUTO_INCREMENT `orderdata`
@@ -431,7 +442,7 @@ ALTER TABLE `orderstat`
 -- 使用表AUTO_INCREMENT `relation`
 --
 ALTER TABLE `relation`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用表AUTO_INCREMENT `shop`
